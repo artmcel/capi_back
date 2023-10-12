@@ -15,6 +15,7 @@ class AddFechaNacimientoToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->dateTime('fecha_nacimiento');
         });
     }
 
@@ -26,6 +27,7 @@ class AddFechaNacimientoToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('fecha_nacimiento');
             //
         });
     }

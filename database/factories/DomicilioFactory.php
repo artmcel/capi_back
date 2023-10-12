@@ -14,7 +14,11 @@ class DomicilioFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'domicilio' => $this->faker->address(),
+            'numero_exterior' => $this->faker->streetAddress(),
+            'colonia' => $this->faker->city(),
+            'cp' => $this->faker->postcode(),
+            'ciudad' => $this->faker->city()
         ];
     }
 }

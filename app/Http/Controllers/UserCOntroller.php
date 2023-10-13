@@ -11,7 +11,7 @@ class UserCOntroller extends Controller
 
     public function getAllUsers(){
 
-        $users = DB::select('SELECT name, domicilio FROM users, user_domicilio WHERE users.id = user_domicilio.user_id');
+        $users = DB::select('SELECT name, domicilio, YEAR(CURDATE())-YEAR(`fecha_nacimiento`) as edad  FROM users, user_domicilio WHERE users.id = user_domicilio.user_id');
         return response()->json($users, 200);
         
     }
